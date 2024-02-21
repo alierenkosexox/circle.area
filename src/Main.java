@@ -1,21 +1,28 @@
-
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //pi*r2
-        double r;       // define radius r
-        Scanner input = new Scanner(System.in);
-        System.out.print("Dairenin Yari Capini Giriniz : " );       //ask user for r value
-        r = input.nextInt();                // save r value
+        Scanner scanner = new Scanner(System.in);
 
-        double area = Math.PI * Math.pow(r,2);      // circle area calculation
-        double perimeter = Math.PI * 2 * r;         // circle perimeter calculation
+        System.out.println("Üçgenin kenar uzunluklarını girin:");
 
-        System.out.println("Dairenin alani : " + area);         // print area
-        System.out.println("Darirenin cevresi : " + perimeter); // print perimeter
+        System.out.print("1. Kenar: ");
+        double kenar1 = scanner.nextDouble();
 
+        System.out.print("2. Kenar: ");
+        double kenar2 = scanner.nextDouble();
+
+        System.out.print("3. Kenar: ");
+        double kenar3 = scanner.nextDouble();
+
+        // Üçgenin alanını hesaplamak için yarı çevreyi hesapla
+        double yariCevre = (kenar1 + kenar2 + kenar3) / 2;
+
+        // Alanı Heron formülü kullanarak hesapla
+        double alan = Math.sqrt(yariCevre * (yariCevre - kenar1) * (yariCevre - kenar2) * (yariCevre - kenar3));
+
+        System.out.println("Üçgenin alanı: " + alan);
+
+        scanner.close();
     }
-}
+}            //Ali Eren KÖSE 21/02/2024 05:33  Balkonuma konan kuşlarla veda vaktidir . Bu veda , vedaların ne sonuncusu ,ne de ilkidir.
